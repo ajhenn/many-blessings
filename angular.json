@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "many-blessings:build:production"
+              "buildTarget": "many-blessings:build:production"
             },
             "development": {
-              "browserTarget": "many-blessings:build:development"
+              "buildTarget": "many-blessings:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "many-blessings:build"
+            "buildTarget": "many-blessings:build"
           }
         },
         "test": {
