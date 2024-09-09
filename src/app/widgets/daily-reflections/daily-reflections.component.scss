@@ -1,0 +1,92 @@
+.container {
+  padding: 2.5rem 2rem 1rem 2rem;
+}
+
+.r-date {
+  text-align: right;
+  padding-bottom: 1rem;
+}
+
+.r-title {
+  text-align: center;
+  padding: 0 0 2rem 0;
+}
+
+.r-footer {
+  text-align: right;
+  padding-bottom: 2rem;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  padding-bottom: 7rem;
+  margin-bottom: auto;
+}
+
+.back-btn {
+  padding-right: 1.5rem;
+  @media (min-width: 720px ) and (max-width: 1000px ) {
+    padding-right: 5rem;
+  }
+  @media (min-width: 1001px ) {
+    padding-right: 10rem;
+  }
+}
+
+.choose-btn {
+  padding-left: 1.5rem;
+  @media (min-width: 720px) and (max-width: 1000px ) {
+    padding-left: 5rem;
+  }
+  @media (min-width: 1001px) {
+    padding-left: 10rem;
+  }
+}
+
+.aa-logo {
+  display: block;
+  margin: auto auto 100% auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.text-fadein {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.text-slide {
+	text-align: center;
+	margin-left: 50%;
+	transform: translateX(-200%);
+	opacity: 0;
+	animation: slide-in-anim 1.5s ease-out forwards;
+}
+
+@keyframes slide-in-anim {
+	20% {
+		opacity: 0;
+	}
+	60% {
+		transform: translateX(-45%);
+	}
+	75% {
+		transform: translateX(-52%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%);
+	}
+}
