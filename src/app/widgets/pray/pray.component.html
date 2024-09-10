@@ -1,1 +1,14 @@
-<p>pray works!</p>
+<mat-card class="card-container" appearance="outlined">
+  <mat-card-header class="title-content">
+    <mat-card-title>
+      {{prayerContent.title}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="prayer-content">
+    <p [innerHTML]="prayerContent.prayer"></p>
+  </mat-card-content>
+  <mat-card-footer class="author-content">
+    &mdash; {{prayerContent.author}}
+  </mat-card-footer>
+</mat-card>
+<!-- <button mat-raised-button color="primary" (click)="getRandomPrayer()">Show a Random Prayer</button> -->

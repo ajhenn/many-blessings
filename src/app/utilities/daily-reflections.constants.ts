@@ -1,4 +1,4 @@
-export class AppConstants {
+export class ReflectionConstants {
 
   public static readonly dailyReflections = [
     {

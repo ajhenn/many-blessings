@@ -10,12 +10,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
-import { SnackBarComponent } from './widgets/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SnackBarComponent } from './widgets/snackbar/snackbar.component';
 import { HomePageComponent } from './widgets/home-page/home-page.component';
 import { PrayComponent } from "./widgets/pray/pray.component";
 import { MeditationComponent } from "./widgets/meditation/meditation.component";
@@ -42,6 +43,7 @@ import { DailyReflectionsComponent } from './widgets/daily-reflections/daily-ref
     MatButtonModule,
     MatTabsModule,
     MatMenuModule,
+    MatCardModule,
     MatIconModule,
     MatNativeDateModule,
     MatDatepickerModule,

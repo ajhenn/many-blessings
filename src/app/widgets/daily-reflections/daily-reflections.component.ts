@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { AppSessionService } from 'src/app/services/app-session.service';
-import { AppConstants } from 'src/app/utilities/daily-reflections.constants';
+import { ReflectionConstants } from 'src/app/utilities/daily-reflections.constants';
 
 @Component({
   selector: 'app-daily-reflections',
@@ -43,7 +43,7 @@ export class DailyReflectionsComponent implements OnInit {
       this.reflectionData = this.appSessionService.getReflectionData();
       this.getDailyReflection(this.today);
     } else {
-      this.reflectionData = AppConstants.dailyReflections;
+      this.reflectionData = ReflectionConstants.dailyReflections;
       this.getDailyReflection(this.today);
     }
   }
