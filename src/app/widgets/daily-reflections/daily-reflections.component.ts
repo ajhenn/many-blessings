@@ -1,23 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatInputModule } from '@angular/material/input';
 import { AppSessionService } from 'src/app/services/app-session.service';
 import { AppConstants } from 'src/app/utilities/daily-reflections.constants';
 
 @Component({
   selector: 'app-daily-reflections',
-  standalone: true,
-  imports: [FormsModule, MatNativeDateModule, MatDatepickerModule, MatButtonModule,
-    MatInputModule],
   templateUrl: './daily-reflections.component.html',
   styleUrl: './daily-reflections.component.scss'
 })
 export class DailyReflectionsComponent implements OnInit {
 
-  isLoading = true;
   today = new Date();
   dateSelection = new Date();
   reflectionData: any;
@@ -50,7 +41,6 @@ export class DailyReflectionsComponent implements OnInit {
   getDailyReflection(currentDate: any) {
     currentDate = currentDate.getMonth().toString() + '/' + currentDate.getDate().toString();
     const promise = new Promise((resolve, reject) => {
-      this.isLoading = true;
       if (!this.dataInStorage) {
         this.appSessionService.setReflectionData(this.reflectionData);
       }
@@ -67,10 +57,9 @@ export class DailyReflectionsComponent implements OnInit {
       resolve(true);
     })
     promise.then(() => {
-      this.isLoading = false;
       this.reflectionFailure = (this.date === '' && this.title === '' && this.content1 === '' && this.footer === '' && this.content2 === '');
       if (this.reflectionFailure) {
-        this.goHome();
+        console.log('Cannot get daily reflection data!');
       }
       setTimeout(() => {
         window.scrollTo({
@@ -91,15 +80,4 @@ export class DailyReflectionsComponent implements OnInit {
     this.footer = '';
     this.content2 = ''
   }
-
-  /**
-   * Go to main landing page
-   */
-  goHome() {
-    if (this.reflectionFailure) {
-      this.appSessionService.reflectionFailure = true;
-    }
-    this.appSessionService.appPage = 'home';
-  }
-
 }

@@ -9,22 +9,39 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
 import { RouterLink } from '@angular/router';
 import { HomePageComponent } from './widgets/home-page/home-page.component';
+import { PrayComponent } from "./widgets/pray/pray.component";
+import { MeditationComponent } from "./widgets/meditation/meditation.component";
+import { GrowthComponent } from "./widgets/growth/growth.component";
 import { DailyReflectionsComponent } from './widgets/daily-reflections/daily-reflections.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent,
+    PrayComponent,
+    MeditationComponent,
+    GrowthComponent,
+    DailyReflectionsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterLink,
     FormsModule,
-    HomePageComponent,
-    DailyReflectionsComponent,
-    RouterLink, MatToolbarModule, MatButtonModule, MatTabsModule, MatMenuModule, MatIconModule
-  ],
+    MatToolbarModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatInputModule
+],
   exports: [
   ],
   providers: [

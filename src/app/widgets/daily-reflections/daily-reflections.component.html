@@ -8,7 +8,7 @@
   </div>
   <div class="btn-group">
     <div class="back-btn">
-      <button mat-raised-button color="primary" (click)="goHome()">Go Back</button>
+      <button mat-raised-button color="primary" routerLink="/home">Go Back</button>
     </div>
     <div class="choose-btn">
       <button mat-raised-button color="primary" (click)="picker.open()">Choose Date</button>
@@ -24,5 +24,4 @@
       <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
   </div>
-  <!-- <app-loader [showLoader]="isLoading" [loaderContent]="'Getting Your Daily Reflection!'"></app-loader> -->
 </div>
