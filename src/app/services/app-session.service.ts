@@ -1,16 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppSessionService {
 
-  appPage = 'home';
-  bookType = 'bigBook';
-  prayerHeader = '';
-  prayerBody = '';
-  reflectionFailure = false;
+  tabIndexValue = 0;
 
   constructor() { }
 

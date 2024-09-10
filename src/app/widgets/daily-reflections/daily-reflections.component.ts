@@ -1,11 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 import { AppSessionService } from 'src/app/services/app-session.service';
 import { AppConstants } from 'src/app/utilities/daily-reflections.constants';
 
 @Component({
   selector: 'app-daily-reflections',
   templateUrl: './daily-reflections.component.html',
-  styleUrl: './daily-reflections.component.scss'
+  styleUrl: './daily-reflections.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('1s ease-out',
+        style({opacity: 1}))
+      ]),
+      transition(':leave', [
+        animate('1s ease-in',
+        style({opacity: 0}))
+      ])
+    ])
+  ]
 })
 export class DailyReflectionsComponent implements OnInit {
 
