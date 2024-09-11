@@ -1,3 +1,14 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.page-container > footer {
+  margin-top: auto;
+}
+
 .header-toolbar {
   width: 100%;
   left: 0;
@@ -18,4 +29,17 @@
 
 .toolbar-color {
   background-color: rgb(223, 201, 172);
+}
+
+.footer-toolbar {
+  padding-top: 3rem;
+}
+
+.footer-logo {
+  height: 45px;
+  margin-left: -0.5rem;
+}
+
+.footer-text {
+  margin-left: auto;
 }

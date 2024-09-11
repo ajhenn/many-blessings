@@ -1,34 +1,44 @@
-<div class="col-12 header-toolbar d-flex">
-  <mat-toolbar class="toolbar-color" color="primary">
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/home" (click)="sendValueToHomePg(0)">
-        <mat-icon>handshake</mat-icon>
-        <span>Pray</span>
+<div class="page-container">
+  <header class="col-12 header-toolbar d-flex">
+    <mat-toolbar class="toolbar-color" color="primary">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+        <mat-icon>menu</mat-icon>
       </button>
-      <button mat-menu-item routerLink="/home" (click)="sendValueToHomePg(1)">
-        <mat-icon>self_improvement</mat-icon>
-        <span>Meditate</span>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/home" (click)="sendValueToHomePg(0)">
+          <mat-icon>handshake</mat-icon>
+          <span>Pray</span>
+        </button>
+        <button mat-menu-item routerLink="/home" (click)="sendValueToHomePg(1)">
+          <mat-icon>self_improvement</mat-icon>
+          <span>Meditate</span>
+        </button>
+        <button mat-menu-item routerLink="/home" (click)="sendValueToHomePg(2)">
+          <mat-icon>emoji_objects</mat-icon>
+          <span>Grow</span>
+        </button>
+        <button mat-menu-item routerLink="/daily-reflection">
+          <mat-icon>book</mat-icon>
+          <span>Daily Reflection</span>
+        </button>
+      </mat-menu>
+      <!-- <span class="header-txt">Blessings...</span> -->
+      <span class="header-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
       </button>
-      <button mat-menu-item routerLink="/home" (click)="sendValueToHomePg(2)">
-        <mat-icon>emoji_objects</mat-icon>
-        <span>Grow</span>
+      <button mat-icon-button aria-label="Share"
+        (click)="shareWebsite('https://emissionbassmusic.github.io/many-blessings')">
+        <mat-icon>share</mat-icon>
       </button>
-      <button mat-menu-item routerLink="/daily-reflection">
-        <mat-icon>book</mat-icon>
-        <span>Daily Reflection</span>
-      </button>
-    </mat-menu>
-    <!-- <span class="header-txt">Blessings...</span> -->
-    <span class="header-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button aria-label="Share" (click)="shareWebsite('https://emissionbassmusic.github.io/many-blessings')">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
+    </mat-toolbar>
+  </header>
+  <router-outlet></router-outlet>
+  <footer class="footer-toolbar">
+    <mat-divider></mat-divider>
+    <mat-toolbar>
+      <img class="footer-logo" src="many-blessings/assets/images/grow_face.png" alt="image" />
+      <span class="footer-text">To thine own self be true.</span>
+    </mat-toolbar>
+  </footer>
 </div>
-<router-outlet></router-outlet>

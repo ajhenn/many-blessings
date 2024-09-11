@@ -17,7 +17,7 @@ import { MatSnackBarRef, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar'
     .snackbar {
       display: flex;
       justify-content: center;
-      color: hotpink;
+      color: white;
     }
   `,
   ],
