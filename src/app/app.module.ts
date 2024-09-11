@@ -17,7 +17,9 @@ import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 import { SnackBarComponent } from './widgets/snackbar/snackbar.component';
+import { ModalDialogComponent } from './widgets/modal-dialog/modal-dialog.component';
 import { HomePageComponent } from './widgets/home-page/home-page.component';
 import { PrayComponent } from "./widgets/pray/pray.component";
 import { MeditationComponent } from "./widgets/meditation/meditation.component";
@@ -32,7 +34,8 @@ import { DailyReflectionsComponent } from './widgets/daily-reflections/daily-ref
     MeditationComponent,
     GrowthComponent,
     DailyReflectionsComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    ModalDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { DailyReflectionsComponent } from './widgets/daily-reflections/daily-ref
     MatDatepickerModule,
     MatInputModule,
     MatRippleModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [
     provideAnimationsAsync()

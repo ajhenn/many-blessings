@@ -3,6 +3,8 @@ import { EventService } from './services/event.service';
 import { AppSessionService } from './services/app-session.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../app/widgets/snackbar/snackbar.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalDialogComponent } from '../app/widgets/modal-dialog/modal-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +16,19 @@ export class AppComponent {
   title = 'many-blessings';
   snackbarContent = 'Sorry, we\'re having trouble.';
   snackbarDurationInSec = 3;
+  dialogContent = {
+    title: '',
+    body: '',
+    showSecondaryBtn: true,
+    secondaryBtnTxt: '',
+    showPrimaryBtn: true,
+    primaryBtnTxt: '',
+    secondaryLink: '',
+    primaryLink: ''
+  };
 
   constructor(private appSessionService: AppSessionService, private eventService: EventService,
-    private snackBar: MatSnackBar) {}
+    private snackBar: MatSnackBar, private dialog: MatDialog) {}
 
   /**
    * Emit value to home pg component
@@ -25,6 +37,20 @@ export class AppComponent {
   sendValueToHomePg(tabIndex: number) {
     this.appSessionService.tabIndexValue = tabIndex;
     this.eventService.homePageTabIndex.emit(tabIndex);
+  }
+
+  /**
+   * Opens modal for donate prompt
+   */
+  donateToDeveloper() {
+    this.dialogContent.title = 'Thank You!';
+    this.dialogContent.body = 'Like the content you see? Donating can help the developer to explore new things, new ideas and to keep this page growing!<br><br>Click "Donate" if you\'d like to support.';
+    this.dialogContent.secondaryBtnTxt = 'Close';
+    this.dialogContent.primaryBtnTxt = 'Donate';
+    this.dialogContent.primaryLink = 'https://paypal.me/emissionbassmusic?country.x=US&locale.x=en_US';
+    this.dialog.open(ModalDialogComponent, {
+      data: this.dialogContent
+    })
   }
 
   /**
