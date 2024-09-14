@@ -1,0 +1,45 @@
+.submitPrayerContainer {
+  display: grid;
+  justify-content: center;
+  margin: 2rem 5rem 5rem 5rem;
+}
+
+h4 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+p {
+  padding-bottom: 1rem;
+}
+
+// .mdc-text-field--outlined {
+//   --mdc-outlined-text-field-container-shape: 28px !important;
+// }
+
+.fieldSize {
+  width: 85vw;
+}
+
+.textAreaHeight {
+  height: 5.77rem !important;
+  font-size: larger !important;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  margin-bottom: auto;
+}
+
+.searchBtn {
+  margin-left: auto;
+}
+
+.no-records {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}

@@ -1,0 +1,71 @@
+<div class="submitPrayerContainer">
+  <h4>Add a prayer straight from your heart. &nbsp;<mat-icon>volunteer_activism</mat-icon></h4>
+  <p>
+    <mat-form-field class="fieldSize">
+      <mat-label>Your prayer</mat-label>
+      <textarea class="textAreaHeight" matInput placeholder="Enter prayer" [(ngModel)]="prayerContent"></textarea>
+      <mat-hint>Please enter your prayer.</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Who wrote this prayer?</mat-label>
+      <input matInput placeholder="Enter author" [(ngModel)]="authorContent">
+      <mat-hint>Please enter a name.</mat-hint>
+    </mat-form-field>
+  </p>
+  <div class="btn-group">
+    <button mat-fab extended (click)="submitPrayer()">
+      <mat-icon>send</mat-icon>
+      Submit Prayer
+    </button>
+    <button *ngIf="showEditMode" class="searchBtn" mat-fab extended (click)="getDbContent()">
+      <mat-icon>search</mat-icon>
+      Check Prayers
+    </button>
+  </div>
+  <ng-container *ngIf="showEditMode">
+    @for (item of dbContent; track item.id) {
+    <span>Prayer: &nbsp; {{item.prayer}}</span><br>
+    <span>Author: &nbsp; {{item.author}}</span><br>
+    <span>Record ID: &nbsp; {{item.id}}</span><br>
+    <span>Approve: &nbsp; {{item.approved}}</span><br><br>
+    } @empty {
+    <span class="no-records">No records in the database.</span>
+    }
+    <ng-container *ngIf="dbContent">
+      <p>
+        <mat-form-field class="fieldSize">
+          <mat-label>Prayer to approve</mat-label>
+          <textarea class="textAreaHeight" matInput placeholder="Enter prayer"
+            [(ngModel)]="adminPrayerContent"></textarea>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Author to approve</mat-label>
+          <input matInput placeholder="Enter author" [(ngModel)]="adminAuthorContent">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Record ID</mat-label>
+          <input matInput type="number" placeholder="Enter record ID" [(ngModel)]="approvedId"
+            (ngModelChange)="getRecordContent(approvedId)">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>Select 1 to approve</mat-label>
+          <input matInput type="number" placeholder="Enter 1 to approve" [(ngModel)]="adminApproved">
+        </mat-form-field>
+      </p>
+      <div class="btn-group">
+        <button mat-fab extended (click)="approvePrayer()">
+          <mat-icon>add</mat-icon>
+          Approve Prayer
+        </button>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

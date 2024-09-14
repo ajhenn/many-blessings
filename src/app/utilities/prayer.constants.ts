@@ -15,6 +15,6 @@ export class PrayerConstants {
       title: "Serenity Prayer",
       prayer: "God, grant me the serenity to accept the things I cannot change,<br>courage to change the things I can,<br>and wisdom to know the difference.<br><br>Living one day at a time;<br>Enjoing one moment at a time;<br>Accepting hardship as a pathway to peace.<br>Taking, as He did, this sinful world as it is, not as I would have it.<br>Trusting that He will make all things right if I surrender to His Will;<br>That I may be reasonably happy in this life, and supremely happy with Him forever in the next.",
       author: "Unknown"
-    },
+    }
   ]
 }
