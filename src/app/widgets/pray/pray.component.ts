@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AppSessionService } from 'src/app/services/app-session.service';
 import { PrayerConstants } from 'src/app/utilities/prayer.constants';
 import { MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatCardFooter } from '@angular/material/card';
@@ -12,11 +12,11 @@ import { MatIcon } from '@angular/material/icon';
     imports: [MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatCardFooter, MatFabButton, MatIcon]
 })
 export class PrayComponent implements OnInit {
+  private appSessionService = inject(AppSessionService);
+
 
   prayerContent: any;
   dataInStorage = false;
-
-  constructor(private appSessionService: AppSessionService) {}
 
   ngOnInit(): void {
     window.scroll(0,0);

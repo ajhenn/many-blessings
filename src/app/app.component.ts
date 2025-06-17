@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { EventService } from './services/event.service';
 import { AppSessionService } from './services/app-session.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -20,6 +20,11 @@ import { MatDivider } from '@angular/material/divider';
 })
 
 export class AppComponent {
+  private appSessionService = inject(AppSessionService);
+  private eventService = inject(EventService);
+  private snackBar = inject(MatSnackBar);
+  private dialog = inject(MatDialog);
+
   title = 'many-blessings';
   snackbarContent = 'Sorry, we\'re having trouble.';
   snackbarDurationInSec = 3;
@@ -33,9 +38,6 @@ export class AppComponent {
     secondaryLink: '',
     primaryLink: ''
   };
-
-  constructor(private appSessionService: AppSessionService, private eventService: EventService,
-    private snackBar: MatSnackBar, private dialog: MatDialog) {}
 
   /**
    * Emit value to home pg component

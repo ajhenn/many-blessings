@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { AppConstants } from 'src/app/utilities/application.constants';
@@ -14,6 +14,9 @@ import { MatFabButton } from '@angular/material/button';
     imports: [MatIcon, MatFormField, MatLabel, MatInput, FormsModule, MatHint, MatFabButton]
 })
 export class PrayerSubmissionComponent implements OnInit {
+  private dbService = inject(NgxIndexedDBService);
+  private route = inject(ActivatedRoute);
+
 
   prayerContent = '';
   authorContent = '';
@@ -26,8 +29,6 @@ export class PrayerSubmissionComponent implements OnInit {
 
   dbContent: any;
   showEditMode = false;
-
-  constructor(private dbService: NgxIndexedDBService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const editMode = this.route.snapshot.queryParamMap.get('modify');

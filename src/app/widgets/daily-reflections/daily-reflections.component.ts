@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { AppSessionService } from 'src/app/services/app-session.service';
 import { ReflectionConstants } from 'src/app/utilities/daily-reflections.constants';
@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
     imports: [MatButton, RouterLink, MatFormField, MatLabel, MatInput, MatDatepickerInput, FormsModule, MatHint, MatDatepickerToggle, MatSuffix, MatDatepicker]
 })
 export class DailyReflectionsComponent implements OnInit {
+  private appSessionService = inject(AppSessionService);
+
 
   today = new Date();
   dateSelection = new Date();
@@ -37,8 +39,6 @@ export class DailyReflectionsComponent implements OnInit {
   content2 = '';
   reflectionFailure = false;
   dataInStorage = false;
-
-  constructor(private appSessionService: AppSessionService) {}
 
   ngOnInit(): void {
     window.scroll(0,0);

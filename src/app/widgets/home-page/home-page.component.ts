@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { AppSessionService } from 'src/app/services/app-session.service';
 import { MatTabGroup, MatTab } from '@angular/material/tabs';
@@ -14,11 +14,12 @@ import { GrowthComponent } from '../growth/growth.component';
     imports: [MatTabGroup, MatTab, PrayComponent, MeditationComponent, GrowthComponent]
 })
 export class HomePageComponent implements OnInit, OnDestroy {
+  private appSessionService = inject(AppSessionService);
+  private eventService = inject(EventService);
+
 
   selectedIndex = 0;
   tabIndexListener: any;
-
-  constructor(private appSessionService: AppSessionService, private eventService: EventService) {}
 
   ngOnInit(): void {
     window.scroll(0,0);

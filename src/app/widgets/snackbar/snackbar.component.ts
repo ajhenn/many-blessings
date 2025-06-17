@@ -1,4 +1,4 @@
-import { Component, Inject, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatSnackBarRef, MAT_SNACK_BAR_DATA, MatSnackBarLabel } from '@angular/material/snack-bar';
 
 @Component({
@@ -25,6 +25,7 @@ import { MatSnackBarRef, MAT_SNACK_BAR_DATA, MatSnackBarLabel } from '@angular/m
 })
 
 export class SnackBarComponent {
-  constructor(@Inject(MAT_SNACK_BAR_DATA) public snackbarContent: string) {}
+  snackbarContent = inject(MAT_SNACK_BAR_DATA);
+
   snackBarRef = inject(MatSnackBarRef);
 }
