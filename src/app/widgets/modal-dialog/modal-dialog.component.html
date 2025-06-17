@@ -3,7 +3,11 @@
   <p [innerHTML]="dialogContent.body"></p>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button *ngIf="dialogContent.showSecondaryBtn" mat-button mat-dialog-close>{{dialogContent.secondaryBtnTxt}}</button>
-  <button *ngIf="dialogContent.showPrimaryBtn" mat-button mat-dialog-close
+  @if (dialogContent.showSecondaryBtn) {
+    <button mat-button mat-dialog-close>{{dialogContent.secondaryBtnTxt}}</button>
+  }
+  @if (dialogContent.showPrimaryBtn) {
+    <button mat-button mat-dialog-close
     cdkFocusInitial (click)="openLinkNewTab(dialogContent.primaryLink)">{{dialogContent.primaryBtnTxt}}</button>
+  }
 </mat-dialog-actions>
