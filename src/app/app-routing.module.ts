@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from 'src/app/widgets/home-page/home-page.component';
-import { DailyReflectionsComponent } from './widgets/daily-reflections/daily-reflections.component';
-import { PrayerSubmissionComponent } from './widgets/prayer-submission/prayer-submission.component';
+
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
-  { path: 'daily-reflection', component: DailyReflectionsComponent },
-  { path: 'submit-a-prayer', component: PrayerSubmissionComponent }
+  { path: 'home', loadComponent: () => import('src/app/widgets/home-page/home-page.component').then(m => m.HomePageComponent) },
+  { path: 'daily-reflection', loadComponent: () => import('./widgets/daily-reflections/daily-reflections.component').then(m => m.DailyReflectionsComponent) },
+  { path: 'submit-a-prayer', loadComponent: () => import('./widgets/prayer-submission/prayer-submission.component').then(m => m.PrayerSubmissionComponent) }
 ];
 
 @NgModule({
