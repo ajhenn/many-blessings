@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { AppSessionService } from 'src/app/services/app-session.service';
 import { ReflectionConstants } from 'src/app/utilities/daily-reflections.constants';
+import { MatButton } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
+import { MatFormField, MatLabel, MatInput, MatHint, MatSuffix } from '@angular/material/input';
+import { MatDatepickerInput, MatDatepickerToggle, MatDatepicker } from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-daily-reflections',
@@ -18,7 +23,7 @@ import { ReflectionConstants } from 'src/app/utilities/daily-reflections.constan
             ])
         ])
     ],
-    standalone: false
+    imports: [MatButton, RouterLink, MatFormField, MatLabel, MatInput, MatDatepickerInput, FormsModule, MatHint, MatDatepickerToggle, MatSuffix, MatDatepicker]
 })
 export class DailyReflectionsComponent implements OnInit {
 

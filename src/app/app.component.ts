@@ -5,12 +5,18 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../app/widgets/snackbar/snackbar.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalDialogComponent } from '../app/widgets/modal-dialog/modal-dialog.component';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatIconButton } from '@angular/material/button';
+import { MatMenuTrigger, MatMenu, MatMenuItem } from '@angular/material/menu';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatDivider } from '@angular/material/divider';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
+    imports: [MatToolbar, MatIconButton, MatMenuTrigger, MatIcon, MatMenu, MatMenuItem, RouterLink, RouterOutlet, MatDivider]
 })
 
 export class AppComponent {

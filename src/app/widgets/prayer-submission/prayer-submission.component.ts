@@ -2,12 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { AppConstants } from 'src/app/utilities/application.constants';
+import { MatIcon } from '@angular/material/icon';
+import { MatFormField, MatLabel, MatInput, MatHint } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatFabButton } from '@angular/material/button';
 
 @Component({
     selector: 'app-prayer-submission',
     templateUrl: './prayer-submission.component.html',
     styleUrl: './prayer-submission.component.scss',
-    standalone: false
+    imports: [MatIcon, MatFormField, MatLabel, MatInput, FormsModule, MatHint, MatFabButton]
 })
 export class PrayerSubmissionComponent implements OnInit {
 

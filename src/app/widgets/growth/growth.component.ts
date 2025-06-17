@@ -3,8 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-growth',
     templateUrl: './growth.component.html',
-    styleUrl: './growth.component.scss',
-    standalone: false
+    styleUrl: './growth.component.scss'
 })
 export class GrowthComponent {
 

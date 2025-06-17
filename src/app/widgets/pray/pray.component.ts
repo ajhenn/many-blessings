@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AppSessionService } from 'src/app/services/app-session.service';
 import { PrayerConstants } from 'src/app/utilities/prayer.constants';
+import { MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatCardFooter } from '@angular/material/card';
+import { MatFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
     selector: 'app-pray',
     templateUrl: './pray.component.html',
     styleUrl: './pray.component.scss',
-    standalone: false
+    imports: [MatCard, MatCardHeader, MatCardTitle, MatCardContent, MatCardFooter, MatFabButton, MatIcon]
 })
 export class PrayComponent implements OnInit {
 

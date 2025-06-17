@@ -1,13 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { AppSessionService } from 'src/app/services/app-session.service';
+import { MatTabGroup, MatTab } from '@angular/material/tabs';
+import { PrayComponent } from '../pray/pray.component';
+import { MeditationComponent } from '../meditation/meditation.component';
+import { GrowthComponent } from '../growth/growth.component';
 
 
 @Component({
     selector: 'app-home-page',
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.scss',
-    standalone: false
+    imports: [MatTabGroup, MatTab, PrayComponent, MeditationComponent, GrowthComponent]
 })
 export class HomePageComponent implements OnInit, OnDestroy {
 
