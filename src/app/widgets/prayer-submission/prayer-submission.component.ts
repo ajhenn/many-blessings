@@ -4,9 +4,10 @@ import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { AppConstants } from 'src/app/utilities/application.constants';
 
 @Component({
-  selector: 'app-prayer-submission',
-  templateUrl: './prayer-submission.component.html',
-  styleUrl: './prayer-submission.component.scss'
+    selector: 'app-prayer-submission',
+    templateUrl: './prayer-submission.component.html',
+    styleUrl: './prayer-submission.component.scss',
+    standalone: false
 })
 export class PrayerSubmissionComponent implements OnInit {
 

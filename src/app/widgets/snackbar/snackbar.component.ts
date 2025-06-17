@@ -2,13 +2,13 @@ import { Component, Inject, inject } from '@angular/core';
 import { MatSnackBarRef, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 @Component({
-  selector: ' app-snackbar',
-  template: `<span class="snackbar" matSnackBarLabel>
+    selector: ' app-snackbar',
+    template: `<span class="snackbar" matSnackBarLabel>
                 {{snackbarContent}}
              </span>
              `,
-  styles: [
-    `
+    styles: [
+        `
     :host {
       display: flex;
       justify-content: center;
@@ -20,7 +20,8 @@ import { MatSnackBarRef, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar'
       color: white;
     }
   `,
-  ],
+    ],
+    standalone: false
 })
 
 export class SnackBarComponent {

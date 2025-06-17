@@ -4,9 +4,10 @@ import { AppSessionService } from 'src/app/services/app-session.service';
 
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss'
+    selector: 'app-home-page',
+    templateUrl: './home-page.component.html',
+    styleUrl: './home-page.component.scss',
+    standalone: false
 })
 export class HomePageComponent implements OnInit, OnDestroy {
 

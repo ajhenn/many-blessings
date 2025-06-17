@@ -3,9 +3,10 @@ import { AppSessionService } from 'src/app/services/app-session.service';
 import { PrayerConstants } from 'src/app/utilities/prayer.constants';
 
 @Component({
-  selector: 'app-pray',
-  templateUrl: './pray.component.html',
-  styleUrl: './pray.component.scss'
+    selector: 'app-pray',
+    templateUrl: './pray.component.html',
+    styleUrl: './pray.component.scss',
+    standalone: false
 })
 export class PrayComponent implements OnInit {
 

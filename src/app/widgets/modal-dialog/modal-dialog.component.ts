@@ -2,9 +2,10 @@ import { Component, Inject, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-modal-dialog',
-  templateUrl: './modal-dialog.component.html',
-  styleUrl: './modal-dialog.component.scss'
+    selector: 'app-modal-dialog',
+    templateUrl: './modal-dialog.component.html',
+    styleUrl: './modal-dialog.component.scss',
+    standalone: false
 })
 export class ModalDialogComponent {
 
